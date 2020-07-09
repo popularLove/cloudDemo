@@ -2,11 +2,10 @@ package com.popular.cloud.controller;
 
 
 import com.popular.cloud.entity.Taobao;
-import com.popular.cloud.entry.ObjectRestResponse;
-import com.popular.cloud.entry.RspUtils;
+import com.popular.cloud.entity.ObjectRestResponse;
+import com.popular.cloud.entity.RspUtils;
 import com.popular.cloud.service.TaobaoService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;

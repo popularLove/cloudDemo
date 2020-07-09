@@ -1,4 +1,4 @@
-package com.popular.cloud.entry;
+package com.popular.cloud.entity;
 
 /**
  * @Author: yuanbq
