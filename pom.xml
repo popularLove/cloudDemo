@@ -12,6 +12,7 @@
         <module>payment8002</module>
         <module>commons</module>
         <module>nacos</module>
+        <module>userUse</module>
     </modules>
     <packaging>pom</packaging>
 

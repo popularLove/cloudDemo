@@ -1,17 +1,11 @@
 package com.popular.cloud.controller;
 
-
-import com.popular.cloud.entity.Taobao;
-import com.popular.cloud.entity.ObjectRestResponse;
-import com.popular.cloud.entity.RspUtils;
-import com.popular.cloud.service.TaobaoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -28,19 +22,11 @@ import javax.annotation.Resource;
 @Api(value="/taobao",tags = "淘宝")
 @RequestMapping("/taobao")
 public class TaobaoController {
-    @Resource
-    private TaobaoService taobaoService;
 
     @GetMapping("/{id}")
     @ApiOperation(value ="查询详情", notes = "查询详情")
     public String get(@ApiParam(name = "id", value = "ID", required = true) @PathVariable Integer id){
-        return taobaoService.selectById(id).toString();
-    }
-
-    @GetMapping("/user/{id}")
-    @ApiOperation(value ="查询详情", notes = "查询详情")
-    public String testA(@ApiParam(name = "id", value = "ID", required = true) @PathVariable Integer id){
-         return taobaoService.selectById(id).toString();
+        return "welove";
     }
 
 

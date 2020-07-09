@@ -1,14 +1,15 @@
 server:
-  port: 8002
+  port: 8004
 
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-payment-use
 
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
+
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  #��ǰ����Դ��������
@@ -28,6 +29,9 @@ spring:
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
+
+server-url:
+  nacos-user-servce: http://cloud-payment-service
 
 mybatis-plus:
   configuration:

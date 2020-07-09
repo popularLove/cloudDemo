@@ -9,6 +9,10 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
         
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
@@ -55,6 +59,11 @@ pagehelper:
 swagger:
   enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 #eureka:
 #  client:
 #    register-with-eureka: true #表示向注册中心注册自己 默认为true

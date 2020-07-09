@@ -1,4 +1,4 @@
-package com.popular.cloud.entry;
+package com.popular.cloud.entity;
 
 /**
  * Created by Ace on 2017/6/11.

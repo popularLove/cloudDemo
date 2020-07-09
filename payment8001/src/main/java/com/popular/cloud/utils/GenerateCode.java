@@ -22,7 +22,7 @@ public class GenerateCode {
         //包名
         String packageName = "com.popular.cloud";
         //生成路径
-        String outputDir = "D:/cloudDemo/payment8001/src/main/java";
+        String outputDir = "D:/cloudDemo/userUse/src/main/java";
         //作者
         String auth = "liuhang";
         //数据库驱动
