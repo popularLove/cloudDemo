@@ -2,6 +2,8 @@ package com.popular.cloud.controller;
 
 
 import com.popular.cloud.entity.Taobao;
+import com.popular.cloud.entry.ObjectRestResponse;
+import com.popular.cloud.entry.RspUtils;
 import com.popular.cloud.service.TaobaoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,8 +34,8 @@ public class TaobaoController {
 
     @GetMapping("/{id}")
     @ApiOperation(value ="查询详情", notes = "查询详情")
-    public Taobao get(@ApiParam(name = "id", value = "ID", required = true) @PathVariable Integer id){
-        return taobaoService.selectById(id);
+    public ObjectRestResponse<Taobao> get(@ApiParam(name = "id", value = "ID", required = true) @PathVariable Integer id){
+        return RspUtils.success(taobaoService.selectById(id));
     }
 
 

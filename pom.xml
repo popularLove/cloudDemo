@@ -9,6 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>payment8001</module>
+        <module>payment8002</module>
+        <module>commons</module>
+        <module>nacos</module>
     </modules>
     <packaging>pom</packaging>
 
