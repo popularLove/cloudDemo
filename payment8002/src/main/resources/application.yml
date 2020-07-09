@@ -1,0 +1,68 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: cloud-payment-service #服务名称
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/popular?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: admin
+    druid:
+      # 连接池的配置信息
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      maxActive: 10
+      # 配置获取连接等待超时的时间
+      maxWait: 10000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 600000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+
+# mybatis相关配置
+mybatis-plus:
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+    use-column-label: true
+    ###############这个配置结合上面spring一个配置解决mybatis字段返回map的时候当结果为null的时候要返回字段
+    call-setters-on-nulls: true
+  mapper-locations: classpath:mapper/**/*.xml
+
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#生产环境关闭swagger
+swagger:
+  enabled: true
+
+#eureka:
+#  client:
+#    register-with-eureka: true #表示向注册中心注册自己 默认为true
+#    fetch-registry: true #是否从EurekaServer抓取已有的注册信息，默认为true,单节点无所谓,集群必须设置为true才能配合ribbon使用负载均衡
+#    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/ # 入驻地址
+#  instance:
+#    instance-id: payment8001
+#    prefer-ip-address: true
+#  #    lease-renewal-interval-in-seconds: 1 # eureka客户端向服务端发送心跳的时间间隔 单位秒 默认30
+#  #    lease-expiration-duration-in-seconds: 2 # eureka
+#  zipkin:
+#    base-url: http://localhost:9411
+#    sleuth:
+#      sampler:
+#        probability: 1
+
